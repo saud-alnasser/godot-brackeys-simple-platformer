@@ -1,3 +1,5 @@
+class_name Killzone
+
 extends Area2D
 
 @onready var timer := $Timer

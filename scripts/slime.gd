@@ -1,3 +1,5 @@
+class_name Slime
+
 extends Node2D
 
 @export var speed := 60.0
