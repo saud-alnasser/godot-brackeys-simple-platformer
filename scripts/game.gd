@@ -17,6 +17,3 @@ func _ready() -> void:
 func collect_coin() -> void:
 	score += 1
 	score_label.text = "You collected %d coins" % score
-
-
-
