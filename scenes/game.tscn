@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dpfox4au6w3o3"]
+[gd_scene load_steps=16 format=4 uid="uid://dpfox4au6w3o3"]
 
 [ext_resource type="Texture2D" uid="uid://bvop5vl087ibq" path="res://assets/sprites/world_tileset.png" id="1_88ist"]
 [ext_resource type="PackedScene" uid="uid://gbaaqcleq0ms" path="res://scenes/player.tscn" id="1_wccxc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qoi4ox7vv8xi" path="res://scenes/platform.tscn" id="4_elaoi"]
 [ext_resource type="PackedScene" uid="uid://cylx1g2fqjcrm" path="res://scenes/coin.tscn" id="5_8qv7g"]
 [ext_resource type="PackedScene" uid="uid://dun067imjeu7w" path="res://scenes/killzone.tscn" id="6_e3snp"]
+[ext_resource type="PackedScene" uid="uid://bttxymbomgrvf" path="res://scenes/slime.tscn" id="7_ixe31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bk5ok"]
 texture = ExtResource("1_88ist")
@@ -342,7 +343,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
-[node name="TileMap" type="Node" parent="."]
+[node name="TileMap" type="Node2D" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="TileMap"]
 z_index = -1
@@ -364,9 +365,9 @@ limit_bottom = 80
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." instance=ExtResource("6_e3snp")]
+[node name="Fallzone" parent="." instance=ExtResource("6_e3snp")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone"]
 shape = SubResource("WorldBoundaryShape2D_nqfu7")
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -411,3 +412,8 @@ position = Vector2(737, -71)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("5_8qv7g")]
 position = Vector2(756, -71)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("7_ixe31")]
+position = Vector2(496, 32)
