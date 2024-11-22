@@ -1,3 +1,5 @@
+class_name Player
+
 extends CharacterBody2D
 
 
@@ -18,7 +20,6 @@ func _physics_process(delta: float) -> void:
 
   # Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
-
 
 	# Flip the Sprite
 	if direction > 0:
